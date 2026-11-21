@@ -381,12 +381,7 @@ export class ActorConnRaw {
 		const { promise, resolve, reject } = promiseWithResolvers<{
 			id: bigint;
 			output: unknown;
-		}>((reason) =>
-			logger().warn({
-				msg: "unhandled action promise rejection",
-				reason,
-			}),
-		);
+		}>(() => {});
 		this.#actionsInFlight.set(actionId, {
 			name: opts.name,
 			resolve,
